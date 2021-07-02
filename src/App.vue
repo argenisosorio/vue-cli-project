@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <a href="#" v-on:click="makeActive('home')">Home</a>&nbsp;
+    <a href="#" v-on:click="makeActive('projects')">Projects</a>&nbsp;
+    <a href="#" v-on:click="makeActive('services')">Services</a>&nbsp;
+    <a href="#" v-on:click="makeActive('contact')">Contact</a>&nbsp;
+    <p>You chose <b>{{ active }}</b></p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      active: 'home'
+    }
+  },
+  methods: {
+    makeActive: function(item){
+      this.active = item;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
